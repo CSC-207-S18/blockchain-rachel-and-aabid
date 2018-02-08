@@ -41,15 +41,18 @@ public class Hash {
 		return toReturn;
 	}//toString
 
-	public boolean equals(Oject other) {
-		
+	public boolean equals() {
+		return true;
 	}//equals
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		String testString = "hello world";
+		byte[] testArr = testString.getBytes();
+		Hash test = new Hash(testArr);
+		System.out.println(test.toString());
 
 	}// main
 
