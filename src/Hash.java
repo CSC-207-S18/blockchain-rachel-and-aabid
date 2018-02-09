@@ -40,6 +40,7 @@ public class Hash {
 		}//for
 		return toReturn;
 	}//toString
+<<<<<<< HEAD
 
 	public boolean equals(Object other) {
 		if (other instanceof Hash) {
@@ -48,8 +49,19 @@ public class Hash {
 		} else {
 			return false;
 		}
+=======
+	
+	
+/**DO THIS!!!*/
+	
+	public boolean equals() {
+		return true;
+>>>>>>> 7b44614fa8d98cf0361ed4f2ce706fc62e0112ad
 	}//equals
+	
+/**DO THIS!!!*/
 
+	
 	/**
 	 * @param args
 	 */
