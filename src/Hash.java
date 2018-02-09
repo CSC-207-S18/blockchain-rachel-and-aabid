@@ -40,7 +40,6 @@ public class Hash {
 		}//for
 		return toReturn;
 	}//toString
-<<<<<<< HEAD
 
 	public boolean equals(Object other) {
 		if (other instanceof Hash) {
