@@ -36,23 +36,29 @@ public class Hash {
 		int length = this.arr.length;
 		for(int i = 0; i < length; i++) {
 			int temp = Byte.toUnsignedInt(this.arr[i]);
-			toReturn += String.format("%d", temp);
+			toReturn += String.format("%02x", temp);
 		}//for
 		return toReturn;
 	}//toString
 
-	public boolean equals() {
-		return true;
+	public boolean equals(Object other) {
+		if (other instanceof Hash) {
+			Hash o = (Hash) other;
+			return Arrays.equals(o.arr, this.arr);
+		} else {
+			return false;
+		}
 	}//equals
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String testString = "hello world";
+		String testString = "sold this";
 		byte[] testArr = testString.getBytes();
 		Hash test = new Hash(testArr);
 		System.out.println(test.toString());
+		
 
 	}// main
 
