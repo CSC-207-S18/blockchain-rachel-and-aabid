@@ -23,17 +23,9 @@ public class Hash {
 	}// getData
 
 	public boolean isValid() {
-		if (this.arr[0] == 0 && this.arr[1] == 0 && this.arr[2] == 0) {
+		if (this.arr[0] == 0x0 && this.arr[1] == 0x0 && this.arr[2] == 0x0) {
 			return true;
 		} else {return false;}
-		
-		/*
-		for(int i = 0; i < 3; i++) {
-			if(this.arr[i] != 0) {
-				return false;
-			}//if
-		}//for
-		return true; */
 	}// isValid
 
 	public String toString() {

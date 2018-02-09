@@ -1,4 +1,4 @@
-import java.util.*;
+// import java.util.*;
 import java.security.NoSuchAlgorithmException;
 import java.security.MessageDigest;
 import java.nio.ByteBuffer;
@@ -13,22 +13,22 @@ public class Block {
 	public static Hash makeHash(int num, int amount, Hash prevHash, long nonce) throws NoSuchAlgorithmException {
 		MessageDigest md = MessageDigest.getInstance("sha-256");
 		ByteBuffer buffer = ByteBuffer.allocate(16).putInt(num).putInt(amount).putLong(nonce);
-		md.update(buffer);
+		md.update(buffer.array());
 		if (prevHash != null) {
 			md.update(prevHash.getData());
 		}
 		byte[] newBytes = md.digest();
 		Hash newHash = new Hash(newBytes);
 		return newHash;
-	}
+	} 
+
 	
 	public Block(int num, int amount, Hash prevHash) throws NoSuchAlgorithmException {
 		this.blockNum = num;
 		this.data = amount; 
 		this.prevHash = prevHash;
 		this.thisHash = makeHash(this.blockNum, this.data, this.prevHash, this.nonce);
-		System.out.println("valid? " + !this.thisHash.isValid());
-		while (this.thisHash.isValid()) {
+		while (!this.thisHash.isValid()) {
 			this.nonce++;
 			this.thisHash = makeHash(this.blockNum, this.data, this.prevHash, this.nonce);
 		}
@@ -70,5 +70,4 @@ public class Block {
 		System.out.println(testBlock.thisHash.toString());
 	}
 }//Block class
-
 
