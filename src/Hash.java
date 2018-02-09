@@ -40,11 +40,17 @@ public class Hash {
 		}//for
 		return toReturn;
 	}//toString
-
+	
+	
+/**DO THIS!!!*/
+	
 	public boolean equals() {
 		return true;
 	}//equals
+	
+/**DO THIS!!!*/
 
+	
 	/**
 	 * @param args
 	 */
