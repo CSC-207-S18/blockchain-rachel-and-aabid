@@ -40,7 +40,7 @@ public class Block {
 		this.data = amount;
 		this.prevHash = prevHash;
 		this.nonce = nonce;
-		this.thisHash = makeHash(num, amount, prevHash, nonce);
+		this.thisHash = makeHash(this.blockNum, this.data, this.prevHash, this.nonce);
 	}
 	public int getNum(){
 		return this.blockNum;
