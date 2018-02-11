@@ -1,4 +1,5 @@
 
+
 /**
  * 
  */
@@ -47,18 +48,4 @@ public class Hash {
 			return false;
 		}
 	}
-
-	
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		String testString = "sold this";
-		byte[] testArr = testString.getBytes();
-		Hash test = new Hash(testArr);
-		System.out.println(test.toString());
-		
-
-	}// main
-
 }// Hash Class
