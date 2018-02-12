@@ -118,17 +118,20 @@ public class BlockChain {
 	boolean isValidBlockChain() {
 		Node newNode = this.first;
 		Node newNode2 = this.first.next;
-
-		int sum = 0;
+		
+		int alice = 0;
+		int bob = this.first.current.getAmount();
 		Node curr = this.first;
 		while (curr != null) {
-			sum += curr.current.getAmount();
+			alice += curr.current.getAmount();
+			bob -= curr.current.getAmount();
 			curr = curr.next;
-			if (sum < 0) {
+			if (bob < 0 || alice < 0) {
 				return false;
 			}
 		}// while
-		if ((newNode.current.getNum() != 0) || (sum < 0)
+		
+		if ((newNode.current.getNum() != 0) || bob < 0 || alice < 0
 				|| (newNode.current.getNonce() < 0)
 				|| (!newNode.current.getHash().isValid())) {
 			return false;
